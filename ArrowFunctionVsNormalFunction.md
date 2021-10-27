@@ -9,16 +9,16 @@ function createObject() {
   return {
     foo: 42,
     bar: function () {
-      console.log("Inside a Bar".this.foo);
+      console.log("Inside a Bar", this.foo);
     },
   };
 }
-createObject({ foo: 21 }).bar(); //override this inside createObject
+createObject.call({ foo: 21 }).bar(); //override this inside createObject
 ```
 
 Arrow Function :-
 
-1. Does not have their own binding "this" or super.
+1. Does not have their own bindings to "this" or super.
 2. Does not have new.target keyword,
 3. Not suitable for call, apply and bind method.as they were designed to allow methods to execute within different scopes -- because Arrow functions establish "this" based on the scope the Arrow function is defined within.
 4. Can not used as constructor.
