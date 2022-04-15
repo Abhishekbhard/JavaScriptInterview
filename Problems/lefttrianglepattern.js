@@ -1,11 +1,13 @@
 let n = 6;
 
-let string = "";
+let star = "";
 
-for (let i = 1; i < n; i++) {
-  for (let j = 1; j <= i; j++) {
-    string += "*";
+for (let i = 0; i < n; i++) {
+  for (let j = 0; j <= i; j++) {
+    star = star + "*";
   }
-  string += "\n";
+
+  star = star + "\n";
 }
-console.log(string);
+
+console.log(star);

@@ -1,18 +1,12 @@
-let n = 5;
-// Three loop needed to print right tringle
-//First loop itrate through the rows
-// Second loop print the space
-// 3rd loop print the star
-
+let n = 6;
 let string = "";
-
-for (i = 1; i <= n; i++) {
-  for (j = i; j < n; j++) {
-    string += " ";
+for (let i = 0; i < n; i++) {
+  for (let j = n - 1; j >= i; j--) {
+    string = string + " ";
   }
-  for (j = 1; j <= i; j++) {
-    string += "*";
+  for (let k = 0; k <= i; k++) {
+    string = string + "*";
   }
-  string += "\n";
+  string = string + "\n";
 }
 console.log(string);
