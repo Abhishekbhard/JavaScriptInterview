@@ -1,0 +1,1 @@
+A reduce function executes a user defined reducer aka callback function on each element of the array,In order passing the return value from the calculation on the preceding element. The final result of running the reducer accross all elements of the arrya is a single value.
