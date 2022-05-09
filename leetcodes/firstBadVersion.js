@@ -4,7 +4,7 @@
  */
 var isBadVersion = function (version) {
   // The first bad version in which this api calculates if a version is bad or not
-  const firstBadVersion = 4;
+  const firstBadVersion = 10;
   if (version >= firstBadVersion) {
     return true;
   }
@@ -31,9 +31,9 @@ var solution = function (isBadVersion) {
       if (isBadVersion(checkVersion)) {
         lastBadVersion = checkVersion;
         right = checkVersion - 1;
-        continue;
+      } else {
+        left = checkVersion + 1;
       }
-      left = checkVersion + 1;
     }
     return lastBadVersion;
   };
@@ -41,4 +41,4 @@ var solution = function (isBadVersion) {
 
 // const firstBadVersion = solution(isBadVersion);
 // const result = firstBadVersion(5);
-console.log(solution(isBadVersion)(5));
+console.log(solution(isBadVersion)(7));
