@@ -16,18 +16,26 @@ let nums = [0, 1, 0, 3, 12];
 //   console.log(output);
 //   return output;
 // };
-const swap = (a, i, j) => {
-  let t = a[j];
-  a[j] = a[i];
-  a[i] = t;
-};
-const result = (nums) => {
-  let j = 0;
+// const swap = (a, i, j) => {
+//   let t = a[j];
+//   a[j] = a[i];
+//   a[i] = t;
+// };
+// const result = (nums) => {
+//   let j = 0;
+//   for (let i = 0; i < nums.length; i++) {
+//     let item = nums[i];
+//     if (item !== 0) {
+//       swap(nums, i, j);
+//       j++;
+//     }
+//   }
+//   return nums;
+// };
+const result = () => {
   for (let i = 0; i < nums.length; i++) {
-    let item = nums[i];
-    if (item !== 0) {
-      swap(nums, i, j);
-      j++;
+    if (nums[i] === 0) {
+      nums.push(nums.splice(nums.indexOf(nums[i]), 1)[0]);
     }
   }
   return nums;
