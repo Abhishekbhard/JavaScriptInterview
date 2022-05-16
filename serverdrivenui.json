@@ -1,0 +1,23 @@
+{
+  "type": "place",
+  "id": "123",
+  "rows": [
+    {
+      "type": "row:carousel",
+      "image_urls": ["slightGlassImage.png"]
+    },
+    {
+      "type": "row:title",
+      "title": "Sightglass Cofee",
+      "starts_at": "Sun ,sept25,7:00Pm"
+    },
+    {
+      "type": "row:action",
+      "actions": []
+    },
+    {
+      "type": "row:map",
+      "address": "1245 Main Street"
+    }
+  ]
+}

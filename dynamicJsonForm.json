@@ -1,0 +1,42 @@
+{
+  "question": [
+    {
+      "id": "sample_bool_question",
+      "type": "BOOL"
+    }
+  ],
+  "components": [
+    {
+      "id": "doc_marquee",
+      "pharseIdPrimary": "doc_morque_title",
+      "type": "DOCUMENT_MARQUE"
+    },
+    {
+      "id": "sample_switch",
+      "pharseIdPrimary": "switch_title",
+      "question_id": "sample_bool_question",
+      "type": "SWITCH_ROW"
+    }
+  ],
+  "steps": [
+    {
+      "componentIds": ["doc_morquee", "sample_switch"],
+      "id": "initial_step",
+      "nextButton": {
+        "disabled": {
+          "question_id": "sample_bool_question",
+          "type": "ANSWER_EQUALS",
+          "value": "false"
+        }
+      }
+    }
+  ],
+  "settings": {
+    "afterSubmitted": {
+      "redirectURL": "www.gag",
+      "primaryButton": {
+        "webHref": "hgalhgla.com"
+      }
+    }
+  }
+}
