@@ -23,14 +23,17 @@ console.log("Run");
 //   .catch((x) => console.log(x));
 function promiseReject() {
   new Promise((resolve, reject) => {
-    reject("This is one promise reject");
+    resolve(() => {
+      const err = new Error("This is the error");
+      throw err;
+    });
   });
 }
 Promise.all([
   "foo",
   sleepRandom(5),
   sleepRandom(15),
-  promiseReject(), // after 15 sec:
+  sleepRandom(13), // after 15 sec:
 ])
   .then((x) => console.log(x))
   .catch((reason) => console.log(reason)); // => ['foo', 956, 85, 382]
