@@ -21,9 +21,16 @@ console.log("Run");
 //     console.log("will not be displayed");
 //   })
 //   .catch((x) => console.log(x));
+function promiseReject() {
+  new Promise((resolve, reject) => {
+    reject("This is one promise reject");
+  });
+}
 Promise.all([
   "foo",
   sleepRandom(5),
   sleepRandom(15),
-  sleepRandom(10), // after 15 sec:
-]).then((x) => console.log(x)); // => ['foo', 956, 85, 382]
+  promiseReject(), // after 15 sec:
+])
+  .then((x) => console.log(x))
+  .catch((reason) => console.log(reason)); // => ['foo', 956, 85, 382]
