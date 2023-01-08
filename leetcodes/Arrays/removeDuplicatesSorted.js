@@ -1,4 +1,4 @@
-let nums = [4, 5, 5, 5, 5];
+let nums = [8, 8, 5, 4, 5, 5, 5, 5, 6, 6];
 // let nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
 
 // array size after removing duplicate
@@ -22,16 +22,16 @@ let nums = [4, 5, 5, 5, 5];
   }
   return ++j;
 }; */
-const removeDuplicates = () => {
-  for (let i = 0; i < nums.length - 1; i++) {
-    if (nums.indexOf(nums[i + 1]) === i) {
-      nums.splice(i, 1);
-      i = i - 1;
-    }
-  }
+// const removeDuplicates = () => {
+//   for (let i = 0; i < nums.length - 1; i++) {
+//     if (nums.indexOf(nums[i + 1]) === i) {
+//       nums.splice(i, 1);
+//       i = i - 1;
+//     }
+//   }
 
-  return nums;
-};
+//   return nums;
+// };
 
 // var removeDuplicates = function () {
 //   let map = {};
@@ -49,5 +49,21 @@ const removeDuplicates = () => {
 
 //   return nums.length;
 // };
+
+//Brute Force approach
+function removeDuplicates() {
+  let withoutDuplicates = [];
+  for (let i = 0; i < nums.length; i++) {
+    let exists = false;
+    for (let j = 0; j < withoutDuplicates.length; j++) {
+      if (nums[i] === withoutDuplicates[j]) {
+        exists = true;
+        break;
+      }
+    }
+    if (!exists) withoutDuplicates.push(nums[i]);
+  }
+  return withoutDuplicates;
+}
 
 console.log(removeDuplicates());

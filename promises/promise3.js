@@ -21,19 +21,7 @@ console.log("Run");
 //     console.log("will not be displayed");
 //   })
 //   .catch((x) => console.log(x));
-function promiseReject() {
-  new Promise((resolve, reject) => {
-    resolve(() => {
-      const err = new Error("This is the error");
-      throw err;
-    });
-  });
-}
-Promise.all([
-  "foo",
-  sleepRandom(5),
-  sleepRandom(15),
-  sleepRandom(13), // after 15 sec:
-])
-  .then((x) => console.log(x))
-  .catch((reason) => console.log(reason)); // => ['foo', 956, 85, 382]
+
+Promise.any([Promise.resolve(1), Promise.reject(2), Promise.resolve(3)]).then(
+  (val) => console.log(val)
+); // => 1
