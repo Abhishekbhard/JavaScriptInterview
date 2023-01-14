@@ -8,11 +8,9 @@
 //   star = star + "\n";
 // }
 // console.log(star);
+var bool = true;
 const numbers = [2, 5, 23, 9];
-let n = numbers.reduce(
-  (total, currentValue, currIndex, array) => total * 2,
-  10
-);
+let n = numbers.reduce((total, currentValue, currIndex, array) => total * 2);
 // function myFunc(total, num) {
 //   return total - num;
 // }

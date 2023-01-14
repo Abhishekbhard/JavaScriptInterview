@@ -49,21 +49,34 @@ let nums = [8, 8, 5, 4, 5, 5, 5, 5, 6, 6];
 
 //   return nums.length;
 // };
+function removeDuplicates() {
+  let result = [];
+  let map = {};
+  for (let i = 0; i < nums.length; i++) {
+    if (map[nums[i]]) {
+      continue;
+    } else {
+      result.push(nums[i]);
+      map[nums[i]] = true;
+    }
+  }
+  return result;
+}
 
 //Brute Force approach
-function removeDuplicates() {
-  let withoutDuplicates = [];
-  for (let i = 0; i < nums.length; i++) {
-    let exists = false;
-    for (let j = 0; j < withoutDuplicates.length; j++) {
-      if (nums[i] === withoutDuplicates[j]) {
-        exists = true;
-        break;
-      }
-    }
-    if (!exists) withoutDuplicates.push(nums[i]);
-  }
-  return withoutDuplicates;
-}
+// function removeDuplicates() {
+//   let withoutDuplicates = [];
+//   for (let i = 0; i < nums.length; i++) {
+//     let exists = false;
+//     for (let j = 0; j < withoutDuplicates.length; j++) {
+//       if (nums[i] === withoutDuplicates[j]) {
+//         exists = true;
+//         break;
+//       }
+//     }
+//     if (!exists) withoutDuplicates.push(nums[i]);
+//   }
+//   return withoutDuplicates;
+// }
 
 console.log(removeDuplicates());
