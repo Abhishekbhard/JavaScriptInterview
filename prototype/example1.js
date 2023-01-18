@@ -8,10 +8,8 @@ function Particle() {
 }
 
 Particle.prototype.show = function () {
-  PointerEvent(this.x, this.y);
+  point(this.x, this.y);
 };
 
-function setup() {
-  createCanvas(600, 300);
-}
+function setup() {}
 const p = new Particle();
