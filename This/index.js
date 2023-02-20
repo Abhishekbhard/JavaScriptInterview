@@ -11,15 +11,16 @@
 // };
 // console.log(object.method(callback, 1, 2));
 
-// const user = {
-//   name: "Abhishek",
-//   getUser() {
-//     function innerFun() {
-//       console.log(this); windows object printed
-//     }
-//     return innerFun();
-//   },
-// };
+const user = {
+  userName: "Abhishek",
+  getUser() {
+    function innerFun() {
+      console.log(this.userName);
+    }
+    return innerFun();
+  },
+};
+console.log(user.getUser());
 // this.userName = "Abhishek";
 
 // function getUser() {

@@ -1,15 +1,23 @@
-// Example 1
-// Only y is hoisted
+let strs = ["flower", "flow", "flight"];
 
-x = 1; // Initialize x, and if not already declared, declare it - but no hoisting as there is no var in the statement.
-console.log(x + " " + y); // '1 undefined'
-// This prints value of y as undefined as JavaScript only hoists declarations
-var y = 2; // Declare and Initialize y
+function solutions() {
+  let prefix = strs[0];
+  for (let i = 1; i < strs.length; i++) {
+    while (strs[i].indexOf(prefix) === -1) {
+      prefix = prefix.substring(0, prefix.length - 1);
+    }
+  }
+  return prefix;
+  //   return prefix;
+  //   let count = 0;
+  //   let flow = "flow";
+  //   if (first.indexOf(prefix) === -1) {
+  //     prefix = prefix.substring(0, prefix.length - 1);
+  //     solutions(prefix, "flow");
+  //   }
+}
 
-// Example 2
-// No hoisting, but since initialization also causes declaration (if not already declared), variables are available.
+//console.log(count);
+//console.log(result);
 
-a = "Cran"; // Initialize a
-b = "berry"; // Initialize b
-
-console.log(a + "" + b); // 'Cranberry'
+console.log(solutions());
