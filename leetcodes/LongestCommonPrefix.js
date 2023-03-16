@@ -19,14 +19,25 @@ let input = ["flower", "flow", "floight"];
 //   return result;
 // };
 
+const longestCommonPrefix = () => {
+  for (let i = 0; i <= input[0].length; i++) {
+    for (let j = 1; j < input.length; j++) {
+      if (input[0][i] !== input[j][i]) {
+        return input[0].slice(0, i);
+      }
+    }
+  }
+  return input[0];
+};
+
 // Solution 2 using higher order function
 
-const longestCommonPrefix = () => {
-  return input.reduce((prev, next) => {
-    let i = 0;
-    while (prev[i] && next[i] && prev[i] === next[i]) i++;
-    return prev.slice(0, i);
-  });
-};
+// const longestCommonPrefix = () => {
+//   return input.reduce((prev, next) => {
+//     let i = 0;
+//     while (prev[i] && next[i] && prev[i] === next[i]) i++;
+//     return prev.slice(0, i);
+//   });
+// };
 
 console.log(longestCommonPrefix());
