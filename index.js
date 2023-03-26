@@ -1,10 +1,15 @@
-(function run() {
-  for (var i = 0; i < 3; i++) {
-    function inner(i) {
-      setTimeout(() => {
-        console.log(i);
-      });
+function test() {
+  var b = 56;
+  function insideTest() {
+    let b = 36;
+    function deepInsideTest() {
+      return b;
     }
-    inner(i);
+    return deepInsideTest();
   }
-})();
+  return insideTest();
+  // return b;
+}
+
+var value = test();
+console.log(value);
